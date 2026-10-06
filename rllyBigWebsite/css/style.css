@@ -1,0 +1,113 @@
+
+body {
+  font-family: "Helvetica", Arial, sans-serif;      
+  font-size: 16px;                                 
+  font-style: normal;                              
+  color: #222222;                                   
+  background-color: #f5f5f5;                        
+  margin: 0;                                        
+  padding: 0;                                       
+  overflow: auto;                                 
+}
+
+#page-wrapper {
+  min-width: 2200px;                                
+  min-height: 2200px;                              
+  position: relative;
+}
+
+
+.title {
+  text-align: center;                               
+  font-weight: bold;                               
+  text-decoration: underline;                       
+  margin-top: 40px;
+}
+
+
+#keyboard-area {
+  width: 600px;                                     
+  height: 400px;                                    
+  margin: 80px auto;                               
+  padding: 20px;                                    
+  border: 3px solid #333333;                        
+  background-color: #ffffff;
+  opacity: 0.95;                                    
+  position: relative;
+}
+
+#keyboard-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.keyboard-text {
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+
+.key {
+  position: absolute;                               
+  width: 120px;                                     
+  height: 80px;                                     
+  border: 2px solid #555555;                        
+  background-color: #e0e0ff;
+  padding: 10px;                                   
+  margin: 0;                                        
+  opacity: 0.9;                                     
+  z-index: 2;                                       
+}
+
+.key-label {
+  display: block;
+  font-weight: bold;                               
+  font-size: 20px;                                 
+  text-align: center;                               
+  margin-bottom: 5px;
+}
+
+.key-message {
+  font-size: 12px;
+  text-align: center;
+}
+
+
+.key-a {
+  top: 300px;
+  left: 1500px;
+}
+
+.key-enter {
+  top: 1200px;
+  left: 300px;
+}
+
+.key-space {
+  top: 1700px;
+  left: 1800px;
+}
+
+.key-z {
+  top: 900px;
+  left: 1000px;
+}
+
+
+.secret-note {
+  position: absolute;
+  bottom: 100px;
+  right: 150px;
+  width: 250px;
+  padding: 15px;
+  border: 2px dashed #aa0000;
+  background-color: #fff0f0;
+  opacity: 0.95;
+}
+
+.secret-span {
+  font-weight: bold;
+  color: #aa0000;
+}
