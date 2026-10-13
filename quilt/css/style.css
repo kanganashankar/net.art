@@ -3,22 +3,20 @@
 }
 
 body {
-    background-color: #f7e26b; /* SpongeBob yellow */
+    background-color: #f7e26b;
 }
 
 .container {
     width: 100vw;
     height: 100vh;
-    display: grid;
     position: relative;
 }
 
-/* Eyes */
+/* Eyes (rectangles now) */
 .eye {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 120px;
     background-color: white;
-    border-radius: 50%;
     border: 8px solid black;
     position: absolute;
     top: 20%;
@@ -27,56 +25,54 @@ body {
 .left-eye { left: 25%; }
 .right-eye { right: 25%; }
 
-/* Pupils */
+/* Pupils (rectangles) */
 .pupil {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background-color: #2b7cff;
-    border-radius: 50%;
     border: 6px solid black;
     position: absolute;
-    top: 28%;
+    top: 26%;
 }
 
-.left-pupil { left: 32%; }
-.right-pupil { right: 32%; }
+.left-pupil { left: 30%; }
+.right-pupil { right: 30%; }
 
-/* Eyelashes */
+/* Eyelashes (thin rectangles) */
 .lash {
-    width: 6px;
+    width: 8px;
     height: 40px;
     background-color: black;
     position: absolute;
     top: 15%;
 }
 
-.lash1 { left: 28%; transform: rotate(-20deg); }
+.lash1 { left: 28%; }
 .lash2 { left: 32%; }
-.lash3 { left: 36%; transform: rotate(20deg); }
+.lash3 { left: 36%; }
 
-.lash4 { right: 28%; transform: rotate(20deg); }
+.lash4 { right: 28%; }
 .lash5 { right: 32%; }
-.lash6 { right: 36%; transform: rotate(-20deg); }
+.lash6 { right: 36%; }
 
-/* Nose */
+/* Nose (rectangle) */
 .nose {
     width: 40px;
-    height: 120px;
+    height: 100px;
     background-color: #f7e26b;
     border: 6px solid black;
-    border-radius: 50px;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* Cheeks */
+/* Cheeks (rectangles) */
 .cheek {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 50px;
     background-color: #ffb6c1;
-    border-radius: 50%;
+    border: 4px solid black;
     position: absolute;
     top: 50%;
 }
@@ -84,39 +80,38 @@ body {
 .left-cheek { left: 18%; }
 .right-cheek { right: 18%; }
 
-/* Mouth */
+/* Mouth (big rectangle) */
 .mouth {
-    width: 400px;
-    height: 200px;
+    width: 380px;
+    height: 140px;
     background-color: black;
-    border-radius: 0 0 200px 200px;
+    border: 6px solid black;
     position: absolute;
-    top: 55%;
+    top: 58%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* Teeth */
+/* Teeth (rectangles) */
 .tooth {
     width: 80px;
     height: 80px;
     background-color: white;
     border: 4px solid black;
     position: absolute;
-    top: 55%;
+    top: 58%;
 }
 
 .tooth-left { left: 46%; }
 .tooth-right { left: 54%; }
 
-/* Sponge Holes (quadrilateral shapes) */
+/* Sponge Holes (rectangles) */
 .hole {
-    background-color: #d9c85a; /* slightly darker yellow */
-    position: absolute;
+    background-color: #d9c85a;
     border: 4px solid #c4b34f;
+    position: absolute;
 }
 
-/* Different quadrilateral sizes + placements */
 .hole1 { width: 120px; height: 80px; top: 10%; left: 10%; }
 .hole2 { width: 90px; height: 140px; top: 70%; left: 20%; }
 .hole3 { width: 150px; height: 100px; top: 30%; right: 12%; }
