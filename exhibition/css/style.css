@@ -1,0 +1,257 @@
+/* Networked Intimacies - curated by Kangana Shankar
+
+   The background changes color when you hover each work.
+
+   PANELS + WINDOWS: maroon (try midnightblue for a deep blue instead)
+   COLORS (background / window accent):
+   default      = dimgray
+   darkslategray / teal         = The World's First Collaborative Sentence
+   purple        / darkmagenta  = My Boyfriend Came Back From the War
+   darkolivegreen / darkseagreen = Learning To Love You More
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: black;
+  background-color: dimgray;
+  /* the color fades into black for a deeper look */
+  background-image: linear-gradient(dimgray, black);
+  background-attachment: fixed;
+}
+
+/* ---------- BACKGROUND THAT CHANGES ON HOVER ---------- */
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+.bg-sentence {
+  background-color: darkslategray;
+  background-image: linear-gradient(darkslategray, black);
+}
+
+.bg-boyfriend {
+  background-color: purple;
+  background-image: linear-gradient(purple, black);
+}
+
+.bg-learning {
+  background-color: darkolivegreen;
+  background-image: linear-gradient(darkolivegreen, black);
+}
+
+/* the ~ means "a later sibling": when a window is hovered, its background fades in */
+#sentence:hover ~ .bg-sentence,
+#boyfriend:hover ~ .bg-boyfriend,
+#learning:hover ~ .bg-learning {
+  opacity: 1;
+}
+
+/* ---------- TWO COLUMNS ---------- */
+
+.page {
+  display: flex;
+}
+
+/* left column stays in place while the right side scrolls */
+.left {
+  width: 38%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  padding: 40px 35px;
+  background-color: maroon;  /* deep red, like the red string of fate that connects people */
+  color: linen;
+  border-right: 3px solid black;
+}
+
+.right {
+  width: 62%;
+  padding: 60px 50px;
+}
+
+/* ---------- LEFT COLUMN ---------- */
+
+h1 {
+  font-size: 46px;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.curator {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  margin: 12px 0 30px;
+}
+
+.statement {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ---------- WINDOWS ---------- */
+
+.window {
+  background-color: maroon;
+  color: linen;
+  border: 3px solid black;
+  box-shadow: 8px 8px 0px black;
+  transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: darkgray;
+  color: black;
+  border-bottom: 3px solid black;
+  padding: 6px 10px;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.title-bar p {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* the three little squares in the corner */
+.buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.buttons span {
+  width: 13px;
+  height: 13px;
+  border: 2px solid black;
+  background-color: linen;
+}
+
+.window-content {
+  padding: 20px;
+}
+
+.window-content img {
+  width: 100%;
+  display: block;
+  border: 2px solid black;
+  margin-bottom: 15px;
+}
+
+.window-content h2 {
+  font-size: 26px;
+}
+
+.artist {
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 12px;
+}
+
+.window-content p {
+  margin-bottom: 12px;
+}
+
+/* classic underlined links, in a light color so they show on the dark red */
+a {
+  color: lightskyblue;
+}
+
+a:visited {
+  color: plum;
+}
+
+/* hovering a window gives it that work's color */
+#sentence:hover {
+  border-color: teal;
+  box-shadow: 8px 8px 0px black;
+}
+
+#sentence:hover .title-bar {
+  background-color: teal;
+  color: white;
+}
+
+#boyfriend:hover {
+  border-color: darkmagenta;
+  box-shadow: 8px 8px 0px black;
+}
+
+#boyfriend:hover .title-bar {
+  background-color: darkmagenta;
+  color: white;
+}
+
+#learning:hover {
+  border-color: darkseagreen;
+  box-shadow: 8px 8px 0px black;
+}
+
+#learning:hover .title-bar {
+  background-color: darkseagreen;
+  color: black;
+}
+
+/* ---------- CABLES BETWEEN WINDOWS ---------- */
+
+.cable {
+  width: 0px;
+  height: 70px;
+  margin: 0 auto;
+  border-left: 4px dashed crimson;  /* a red thread connecting the works */
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 50px;
+  background-color: maroon;
+  color: linen;
+  border: 2px solid black;
+  padding: 6px;
+}
+
+/* ---------- PHONES: stack the columns ---------- */
+
+@media (max-width: 800px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .left {
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 3px solid black;
+  }
+
+  .right {
+    padding: 30px 20px;
+  }
+}
