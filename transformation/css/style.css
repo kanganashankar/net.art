@@ -1,0 +1,92 @@
+/* ========== DAYTIME (how the page starts) ========== */
+
+body {
+  background-color: #f5f1e8;
+  color: #333;
+  font-family: Georgia, serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  margin-top: 50px;
+  font-weight: normal;
+}
+
+.subtitle {
+  font-style: italic;
+}
+
+#switch {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.exhibit {
+  width: 150px;
+}
+
+.art {
+  font-size: 80px;
+}
+
+.day-text {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* the night text is hidden during the day */
+.night-text {
+  display: none;
+}
+
+
+/* ========== NIGHTTIME (when the body has the class "night") ========== */
+
+body.night {
+  background-color: #0a0f1f;
+  color: #556;
+}
+
+/* swap the text: hide the museum labels, show what the exhibits are saying */
+body.night .day-text {
+  display: none;
+}
+
+body.night .night-text {
+  display: block;
+  color: yellow;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 18px;
+}
+
+/* the exhibits come alive and wander around */
+body.night .exhibit {
+  animation: wander 3s ease-in-out infinite alternate;
+}
+
+/* give each one a different speed so they don't move together */
+body.night .exhibit:nth-child(2) { animation-duration: 2s; }
+body.night .exhibit:nth-child(3) { animation-duration: 4s; animation-direction: alternate-reverse; }
+body.night .exhibit:nth-child(4) { animation-duration: 2.5s; }
+body.night .exhibit:nth-child(5) { animation-duration: 3.5s; animation-direction: alternate-reverse; }
+
+@keyframes wander {
+  0%   { transform: translate(0px, 0px) rotate(0deg); }
+  25%  { transform: translate(60px, -80px) rotate(15deg); }
+  50%  { transform: translate(-40px, 60px) rotate(-10deg); }
+  75%  { transform: translate(80px, 100px) rotate(20deg); }
+  100% { transform: translate(-70px, -40px) rotate(-15deg); }
+}
+
